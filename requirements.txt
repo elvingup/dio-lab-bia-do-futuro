@@ -9,3 +9,5 @@ pandas==2.2.1
 
 # Segurança e Gerenciamento de Segredos
 python-dotenv==1.0.1
+
+# Para orquestrar a instalação é preciso ativar o ambiente virtual no terminal e executar: pip install -r requirements.txt
