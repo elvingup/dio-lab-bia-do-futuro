@@ -1,0 +1,11 @@
+# SDK da Inteligência Artificial Generativa
+google-generativeai==0.4.1  
+
+# Interface Gráfica e Dashboards
+streamlit==1.32.0
+
+# Processamento da Base de Conhecimento
+pandas==2.2.1
+
+# Segurança e Gerenciamento de Segredos
+python-dotenv==1.0.1
