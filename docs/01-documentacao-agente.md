@@ -79,12 +79,12 @@ flowchart TD
 
 ### Componentes
 
-| Componente | Descrição |
-|------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Componente               | Descrição                                                                                                                                                                                                                                                                                                                                                                                |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Interface**            | Camada responsável pela interação entre o cliente e o Moprefipe. Recebe as mensagens do usuário, apresenta as respostas do agente e mantém a experiência de conversação. A implementação da interface utilizará **Streamlit 1.32.0**, biblioteca já definida no `requirements.txt` especificamente para a criação da interface gráfica e dos dashboards.                                 |
+| **LLM**                  | Componente responsável por interpretar a solicitação do cliente, utilizar o contexto fornecido pela aplicação, seguir as instruções do agente e gerar a resposta em linguagem natural. A integração com o modelo de IA generativa será realizada por meio do **Google Generative AI SDK 0.4.1 (`google-generativeai`)**, também definido no `requirements.txt`.                          |
+| **Base de Conhecimento** | Conjunto de dados que fornece ao Moprefipe as informações necessárias para analisar a situação financeira do cliente. Inclui os dados de **transações**, **histórico de atendimento**, **perfil do investidor** e **produtos financeiros** disponibilizados no projeto. O processamento desses dados poderá utilizar **Pandas 2.2.1**, biblioteca também definida no `requirements.txt`. |
+| **Validação**            | Camada responsável por verificar a resposta gerada antes de apresentá-la ao cliente. Deve verificar se a resposta está fundamentada nos dados disponíveis, respeita o escopo do Moprefipe, segue seu tom de comunicação e não apresenta informações inventadas. Essa etapa implementa, na prática, os mecanismos de segurança e anti-alucinação definidos para o agente.                 |
 
 ---
 
