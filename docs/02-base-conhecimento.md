@@ -2,25 +2,14 @@
 
 ## Dados Utilizados
 
-Descreva se usou os arquivos da pasta `data`, por exemplo:
+O agente utiliza dados mockados nos arquivos da pasta `data` para efetuar o RAG (Retrieval Augmented Generation). Os arquivos utilizados pelo agente são os seguintes:
 
-| Arquivo | Formato | Utilização no Agente |
+| Arquivo | Formato | Utilização pelo Agente |
 |---------|---------|---------------------|
 | `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
 | `perfil_investidor.json` | JSON | Personalizar recomendações |
 | `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
 | `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
-
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
-
----
-
-## Adaptações nos Dados
-
-> Você modificou ou expandiu os dados mockados? Descreva aqui.
-
-[Sua descrição aqui]
 
 ---
 
@@ -40,9 +29,9 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 
 ## Exemplo de Contexto Montado
 
-> Mostre um exemplo de como os dados são formatados para o agente.
+Eis um exemplo de como os dados são formatados para o agente:
 
-```
+```text
 Dados do Cliente:
 - Nome: João Silva
 - Perfil: Moderado
