@@ -1,149 +1,86 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 🤖 Moprefipe: Agente Financeiro Inteligente e Proativo
 
-## Contexto
+[![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-green)](#)
+[![Tech Stack](https://img.shields.io/badge/Tech-Python%20%7C%20GenAI%20%7C%20Prompt%20Engineering-blue)](#)
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+Este repositório contém a implementação do **Moprefipe**, um agente financeiro inteligente desenvolvido como parte do laboratório **BIA do Futuro**. 
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+Diferente de chatbots tradicionais e reativos, o Moprefipe foi projetado com foco em **proatividade, hiper-personalização e alta confiabilidade**, utilizando IA Generativa para atuar como um verdadeiro parceiro financeiro do usuário, sempre com métricas rígidas para mitigação de alucinações.
 
 ---
 
-## O Que Você Deve Entregar
+## 🎯 O Desafio: Lab BIA do Futuro
 
-### 1. Documentação do Agente
+O setor financeiro exige precisão. O objetivo deste projeto foi transcender o atendimento básico, criando um agente capaz de:
+- Analisar o histórico e o perfil do investidor.
+- Fornecer recomendações contextualizadas.
+- Manter uma postura consultiva e segura, barrando respostas fora do escopo financeiro (*guardrails*).
 
-Defina **o que** seu agente faz e **como** ele funciona:
+## 📁 Estrutura do Projeto & Status das Entregas
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
+O desenvolvimento seguiu uma esteira lógica de documentação e prototipagem. A situação atual do projeto é:
 
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
-
----
-
-### 2. Base de Conhecimento
-
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+- [x] **`docs/01-documentacao-agente.md`**: Definição da persona (Moprefipe), escopo de atuação e arquitetura do agente.
+- [x] **`docs/02-base-conhecimento.md`**: Mapeamento dos dados estruturados e contexto de negócios (perfil de investidor, portfólio, histórico).
+- [x] **`docs/03-prompts.md`**: Construção do *System Prompt* utilizando técnicas de *Few-Shot Prompting* e injeção de contexto para controle estrito de qualidade.
+- [x] **`app.py`**: Prototipagem da aplicação funcional, integrando a lógica de LLM com a base de conhecimento.
+- [ ] **`docs/04-metricas.md`**: (Pendente) Definição de SLOs (Service Level Objectives) para precisão, tempo de resposta e taxa de alucinação.
+- [ ] **`docs/05-pitch.md`**: (Pendente) Roteiro da apresentação executiva do projeto.
 
 ---
 
-### 3. Prompts do Agente
+## 🧠 Arquitetura e Engenharia de Prompts
 
-Documente os prompts que definem o comportamento do seu agente:
+O núcleo de inteligência do **Moprefipe** baseia-se em princípios fortes de Engenharia de Prompts:
+1. **Contexto Fechado**: O agente opera estritamente sobre a base de conhecimento fornecida, garantindo segurança na recomendação de produtos financeiros.
+2. **Prevenção de Alucinação**: Instruções explícitas no *System Prompt* obrigam o agente a declarar desconhecimento caso a pergunta fuja da sua base de dados, em vez de inventar dados mercadológicos.
+3. **Tom de Voz**: Profissional, analítico e encorajador.
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
+## 🚀 Como Executar o Protótipo
 
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
+Para rodar a aplicação localmente, certifique-se de ter o Python instalado e siga os passos:
 
----
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/elvingup/dio-lab-bia-do-futuro.git
+   cd dio-lab-bia-do-futuro
 
-### 4. Aplicação Funcional
+   ```
 
-Desenvolva um **protótipo funcional** do seu agente:
 
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
+2. Crie e ative um ambiente virtual:
+```bash
+python -m venv venv
+source venv/bin/activate  # No Windows use: venv\Scripts\activate
 
 ```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+
+
+3. Instale as dependências:
+```bash
+pip install -r requirements.txt
+
 ```
+
+
+4. Configure suas variáveis de ambiente (ex: API Keys) no arquivo `.env`.
+
+
+5. Execute a aplicação:
+```bash
+python app.py 
+# ou 'streamlit run app.py' / 'gradio app.py' dependendo da interface escolhida
+
+```
+
+
 
 ---
 
-## Dicas Finais
+## 🛡️ Cultura de Confiabilidade
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+Inspirado em práticas de SRE (Site Reliability Engineering), o Moprefipe é desenvolvido com a mentalidade de que *falhas no setor financeiro custam caro*. A separação entre base de conhecimento, regras de prompt e código de aplicação visa facilitar futuras auditorias e implementações de testes automatizados (como matrizes de confusão para avaliar a assertividade das recomendações).
+
+---
+
+*Projeto desenvolvido para fins didáticos e demonstração de arquitetura de agentes autônomos.*
