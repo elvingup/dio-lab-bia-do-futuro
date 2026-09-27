@@ -1,3 +1,4 @@
+from pathlib import Path
 import streamlit as st
 import google.generativeai as genai
 import pandas as pd
@@ -21,14 +22,23 @@ genai.configure(api_key=API_KEY)
 # =====================================================================
 # 2. Carregamento do System Prompt
 # =====================================================================
+# Identifica o caminho absoluto da pasta atual onde o app.py reside
+CURRENT_DIR = Path(__file__).resolve().parent
+
+# Constrói o caminho para o arquivo system-prompt.md dentro da mesma pasta (src/)
+PROMPT_PATH = CURRENT_DIR / "system-prompt.md"
+
 # Lê as regras de negócio e de segurança do Moprefipe
 try:
-    with open("../system-prompt.md", "r", encoding="utf-8") as f:
-        SYSTEM_PROMPT = f.read()
+    with open(PROMPT_PATH, "r", encoding="utf-8") as f:
+        SYSTEM_PROMPT = f.read().strip()
 except FileNotFoundError:
     SYSTEM_PROMPT = "Você é o Moprefipe, um agente preditivo de finanças."
+except Exception as e:
+    st.error(f"**Erro ao carregar o System Prompt:** {e}")
+    st.stop()
 
-# Inicializamos o modelo de IA e passamos o system prompt como instrução base
+# Inicializa o modelo de IA e passa o system prompt como instrução base
 model = genai.GenerativeModel(
     model_name="gemini-1.5-flash",
     system_instruction=SYSTEM_PROMPT
