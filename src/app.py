@@ -2,12 +2,20 @@ import streamlit as st
 import google.generativeai as genai
 import pandas as pd
 import os
+from dotenv import load_dotenv
+
+# Carrega as variáveis do arquivo .env para o ambiente do SO
+load_dotenv()
 
 # =====================================================================
 # 1. Configuração do Modelo GenAI (SDK Oficial)
 # =====================================================================
-# A chave de API deve estar configurada nas variáveis de ambiente do SO.
-API_KEY = os.getenv("GEMINI_API_KEY", "SUA_CHAVE_API_AQUI")
+# A chave de API é obtida exclusivamente da variável de ambiente
+API_KEY = os.getenv("GEMINI_API_KEY")
+
+if not API_KEY:
+    raise ValueError("A chave GEMINI_API_KEY não foi encontrada no ambiente.")
+
 genai.configure(api_key=API_KEY)
 
 # =====================================================================
