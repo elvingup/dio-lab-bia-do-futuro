@@ -51,7 +51,7 @@ Para rodar a aplicação localmente, certifique-se de ter o Python instalado e s
 2. Crie e ative um ambiente virtual:
 ```bash
 python -m venv venv
-source venv/bin/activate  # No Windows use: venv\Scripts\activate
+source venv/bin/activate 
 
 ```
 
@@ -68,8 +68,7 @@ pip install -r requirements.txt
 
 5. Execute a aplicação:
 ```bash
-python app.py 
-# ou 'streamlit run app.py' / 'gradio app.py' dependendo da interface escolhida
+streamlit run app.py 
 
 ```
 
@@ -83,4 +82,4 @@ Inspirado em práticas de SRE (Site Reliability Engineering), o Moprefipe é des
 
 ---
 
-*Projeto desenvolvido para fins didáticos e demonstração de arquitetura de agentes autônomos.*
+*Projeto desenvolvido para fins didáticos e demonstração de arquitetura de agentes autônomos conjuntamente a uso intensivo de IA Generativa.*
