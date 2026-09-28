@@ -1,5 +1,5 @@
 # SDK da Inteligência Artificial Generativa
-google-generativeai>=0.5.0
+google-genai>=0.1.0
 
 # Interface Gráfica e Dashboards
 streamlit==1.32.0
