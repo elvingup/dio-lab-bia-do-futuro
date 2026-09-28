@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
+st.set_page_config(page_title="Moprefipe - Monitoramento Preditivo de Finanças Pessoais", page_icon="🏦", layout="centered")
+
 # ---------------------------------------------------------------------
 # 1. Configurações Iniciais e Variáveis de Ambiente
 # ---------------------------------------------------------------------
@@ -94,7 +96,6 @@ CONTEXT = carregar_base_conhecimento(DATA_DIR)
 # ---------------------------------------------------------------------
 # 3. Interface do Usuário (Streamlit UI & Gestão de Chat)
 # ---------------------------------------------------------------------
-st.set_page_config(page_title="Moprefipe - Monitoramento Preditivo de Finanças Pessoais", page_icon="🏦", layout="centered")
 st.title("🏦 Moprefipe")
 st.markdown("Seu co-piloto financeiro preventivo e conselheiro.")
 
