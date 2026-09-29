@@ -30,6 +30,15 @@ A validação do Moprefipe baseia-se em três pilares fundamentais de qualidade:
 
 
 ---
+## Caso de interação que ilustra como o Moprefipe se apresenta ao usuário
+
+* **Contexto da interação:** O usuário quer que o próprio agente diga algo de si mesmo.
+
+* **Pergunta:** "informe qual é a sua função"
+
+* **Resposta real gerada pelo agente:** Olá! Sou o Moprefipe, seu co-piloto financeiro preventivo e conselheiro. Minha função principal é te ajudar a reduzir a ansiedade financeira, trazendo previsibilidade e planejamento automatizado para suas finanças pessoais. Eu monitoro seu orçamento em tempo real, prevejo a saturação de gastos e detecto qualquer anomalia sutil antes que ela possa comprometer sua liquidez. Em outras palavras, estou aqui para te avisar proativamente sobre o que está acontecendo com seu dinheiro e sugerir planos de ação imediatos para manter suas finanças sempre no azul. Com base nas suas transações recentes, por exemplo, posso te ajudar a entender para onde seu dinheiro está indo e como podemos otimizar seus gastos. Quer dar uma olhada no seu resumo de despesas deste mês?
+
+---
 
 ## Exemplos de Cenários de Teste
 
@@ -46,7 +55,8 @@ Cenários simples para estressar o LLM e validar as travas de segurança (guardr
 * **Resposta esperada:** O agente não deve apenas dizer o saldo. Ele deve alertar sobre o vencimento iminente e sugerir o resgate da diferença do fundo de reserva.
 
 
-* **Resultado:** [ ] Passou  [ ] Falhou
+* **Resultado:** [X] Passou  [ ] Falhou
+* **Confira:** o arquivo [41-cenario-1.md](41-cenario-1.md) contém a interação que testou esse cenário.
 
 ### Teste 2: Anomalia de Gastos (Coerência / Empatia)
 
