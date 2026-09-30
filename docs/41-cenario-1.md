@@ -12,6 +12,7 @@ Olá\! Sou o Moprefipe, seu co-piloto financeiro. Analisando suas transações a
 Suas maiores despesas até agora foram com moradia (R1380,00,incluindoaluguelecontadeluz)ealimentac\\ca\~o(R 1380,00, incluindo aluguel e conta de luz) e alimentação (R1380,00,incluindoaluguelecontadeluz)ealimentac\\c​a\~o(R 570,00).
 
 Para garantir que você termine o mês no azul e sem surpresas, que tal darmos uma olhada nessas categorias ou planejarmos os gastos para os últimos dias de outubro? Assim, evitamos qualquer aperto\!
+
 ---
 
 ### Input do Usuário
@@ -27,6 +28,7 @@ Para planejarmos os últimos dias de outubro e garantir que você termine o mês
 2. **Antecipar gastos futuros:** Existem outras despesas que você sabe que virão até o final do mês (como mais transporte, lazer ou alimentação)? Se sim, podemos já reservar um valor para elas.
 
 Que tal começarmos definindo um pequeno "orçamento de bolso" para alimentação e transporte para os próximos 5 dias? Assim, você tem uma meta clara e evita surpresas. O que acha?
+
 ---
 
 ### Input do Usuário
@@ -40,6 +42,7 @@ Com base nas suas transações, você gastou em média R22,80pordiacomalimentac\
 * **Orçamento de Bolso para Alimentação e Transporte:** R210,00(aproximadamenteR 210,00 (aproximadamente R210,00(aproximadamenteR 35,00 por dia).
 
 Este valor é uma estimativa baseada no seu padrão de gastos anterior e visa cobrir suas necessidades básicas nessas categorias até o final do mês.
+
 ---
 
 ### Input do Usuário
@@ -54,6 +57,7 @@ Não se preocupe em "estourar o orçamento" se já estamos planejando para isso\
 Para que eu possa recalcular e te dar uma previsão mais precisa, você teria uma estimativa de quanto a mais você planeja gastar com lanches e Uber nesses dias de evento (28, 29 e 30 de outubro)?
 
 Com essa informação, podemos ajustar o seu "orçamento de bolso" para essa semana atípica e ver o impacto no seu saldo final do mês. Assim, podemos acomodar esses gastos extras e, se necessário, identificar alguma outra categoria onde podemos fazer um pequeno ajuste temporário. O que acha?
+
 ---
 
 ### Input do Usuário
@@ -76,6 +80,7 @@ Isso significa que, do seu saldo disponível de R2511,10(combasenassuastransac\\
 Viu só? Não há "estouro" quando a gente planeja\! Agora temos uma visão mais realista para essa semana atípica.
 
 Com esse novo "orçamento de bolso" de R\$ 390,00 para alimentação e transporte, você se sente mais seguro para os eventos? Quer que eu verifique se há alguma outra categoria onde podemos fazer um pequeno ajuste, caso sinta que o saldo final ficou apertado?
+
 ---
 
 ### Input do Usuário
@@ -88,6 +93,7 @@ Excelente\! Fico muito feliz que você se sinta seguro com o saldo, mesmo com os
 Com o novo "orçamento de bolso" de R390,00paraalimentac\\ca\~oetransporteateˊofinaldome^s,eumsaldodisponıˊveldeR 390,00 para alimentação e transporte até o final do mês, e um saldo disponível de R390,00paraalimentac\\c​a\~oetransporteateˊofinaldome^s,eumsaldodisponıˊveldeR 2331,10, você tem uma visão clara e realista.
 
 Quer que eu configure um alerta para te avisar se os gastos com alimentação ou transporte se aproximarem desse novo limite de R\$ 390,00? Ou talvez queira dar uma olhada em como as outras categorias de despesa estão se comportando para o restante do mês?
+
 ---
 
 ### Input do Usuário
@@ -110,6 +116,7 @@ Essas categorias parecem estar dentro do esperado, com base nos dados que temos.
 Para os últimos dias de outubro, você prevê mais algum gasto nessas categorias (moradia, lazer, saúde) ou em alguma outra que ainda não apareceu nas transações? Por exemplo, alguma assinatura que vence, uma consulta médica ou um evento de lazer?
 
 Me diga se há algo mais que você já sabe que vai gastar, e podemos incluir no seu planejamento para garantir que não haja surpresas\!
+
 ---
 
 ### Input do Usuário
@@ -125,4 +132,4 @@ Fique tranquilo, o Moprefipe continuará monitorando suas transações em tempo 
 
 Estou aqui para garantir que você termine o mês com tranquilidade e sem surpresas. Pode contar comigo\!
 
- 
+---
