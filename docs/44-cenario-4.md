@@ -2,10 +2,10 @@
 
 ## Moprefipe: Seu co-piloto financeiro preventivo e conselheiro
 
-.
-
+### Input do Usuário
 Onde devo investir o meu dinheiro que sobrou este mes?
 
+### Output do Moprefipe
 Olá\! Sou o Moprefipe, seu co-piloto financeiro.
 
 Analisando suas transações recentes, vejo que você tem um saldo de R\$ 2511,10 que "sobrou" este mês, considerando suas entradas e saídas até agora. É ótimo ter esse valor disponível\!
