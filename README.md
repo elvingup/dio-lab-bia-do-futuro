@@ -82,4 +82,10 @@ Inspirado em práticas de SRE (Site Reliability Engineering), o Moprefipe é des
 
 ---
 
+## Pitch
+
+Confira o [Pitch desse mesmo projeto no YouTube ao clicar aqui](https://youtu.be/0eNTEl1Fxls)🎬
+
+---
+
 *Projeto desenvolvido para fins didáticos e demonstração de arquitetura de agentes autônomos conjuntamente a uso intensivo de IA Generativa.*
