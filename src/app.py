@@ -59,8 +59,17 @@ def carregar_base_conhecimento(data_dir: Path) -> str:
             return default
 
     v_cliente = ler_arquivo("cliente.json", "Dados do cliente não encontrados.")
-    v_atendimentos = ler_arquivo("atendimentos.json", "Atendimentos não encontrados.")
     v_produtos = ler_arquivo("produtos.json", "Produtos não encontrados.")
+
+    # Processamento seguro do histórico de atendimento em CSV via Pandas
+    historico_atendimento_path = data_dir / "historico_atendimento.csv"
+    try:
+        df_historico_atendimento = pd.read_csv(historico_atendimento_path)
+        v_atendimentos = df_historico_atendimento.to_string(index=False)
+    except FileNotFoundError:
+        v_atendimentos = "Histórico de atendimento não encontrado."
+    except Exception as e:
+        v_atendimentos = f"Erro ao processar o histórico de atendimento: {e}"
 
     # Processamento seguro das transações em CSV via Pandas
     transacoes_path = data_dir / "transacoes.csv"
