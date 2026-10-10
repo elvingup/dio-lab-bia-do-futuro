@@ -24,8 +24,8 @@ O desenvolvimento seguiu uma esteira lógica de documentação e prototipagem. A
 - [x] **`docs/02-base-conhecimento.md`**: Mapeamento dos dados estruturados e contexto de negócios (perfil de investidor, portfólio, histórico).
 - [x] **`docs/03-prompts.md`**: Construção do *System Prompt* utilizando técnicas de *Few-Shot Prompting* e injeção de contexto para controle estrito de qualidade.
 - [x] **`app.py`**: Prototipagem da aplicação funcional, integrando a lógica de LLM com a base de conhecimento.
-- [ ] **`docs/04-metricas.md`**: (Pendente) Definição de SLOs (Service Level Objectives) para precisão, tempo de resposta e taxa de alucinação.
-- [ ] **`docs/05-pitch.md`**: (Pendente) Roteiro da apresentação executiva do projeto.
+- [X] **`docs/04-metricas.md`**: (Pendente) Definição de SLOs (Service Level Objectives) para precisão, tempo de resposta e taxa de alucinação.
+- [X] **`docs/05-pitch.md`**: (Pendente) Roteiro da apresentação executiva do projeto.
 
 ---
 
@@ -64,7 +64,11 @@ pip install -r requirements.txt
 
 
 4. Configure suas variáveis de ambiente (ex: API Keys) no arquivo `.env`.
-
+   * Vale notar que o arquivo `.gitignore` já contém uma declaração que ignora o arquivo `.env`.
+   * Crie um arquivo `.env` (na raiz do repositório) e defina as variáveis de ambiente conforme o exemplo abaixo:
+   ```bash 
+   GEMINI_API_KEY=digite_a_sua_api_key_da_conta_do_google_gemini_aqui_mesmo
+   ```
 
 5. Execute a aplicação:
 ```bash
