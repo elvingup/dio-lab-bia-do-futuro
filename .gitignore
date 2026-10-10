@@ -4,8 +4,17 @@ README-backup.md
 draft.md
 ai_models_list.py
 *-backup.*
+*_backup.*
 RoteiroLab.md
 *-test.*
+
+# Ignorar todos os arquivos de dados gerados dinamicamente na pasta data/
+data/*.csv
+data/*.json
+data/*.parquet
+
+# Mas permitir manter a pasta rastreada se necessário (opcional)
+!data/.gitkeep
 
 # Variáveis de Ambiente e Chaves de API (CRÍTICO)
 .env
