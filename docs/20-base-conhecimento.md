@@ -2,7 +2,7 @@
 
 ## Dados Utilizados
 
-O agente utiliza dados mockados nos arquivos da pasta `data` para efetuar o RAG (Retrieval Augmented Generation). Os arquivos utilizados pelo agente são os seguintes:
+O agente utiliza dados do `Hugging Face Datasets` que o arquivo `ingest_data.py` adquire para popular a pasta `data` visando efetuar o **RAG** (Retrieval Augmented Generation). Os arquivos utilizados pelo agente são os seguintes:
 
 | Arquivo | Formato | Utilização pelo Agente |
 |---------|---------|---------------------|
@@ -17,7 +17,7 @@ O agente utiliza dados mockados nos arquivos da pasta `data` para efetuar o RAG 
 
 ### Como os dados são carregados?
 
-Os dados da Base de Conhecimento são armazenados localmente na pasta `data/` e carregados pela aplicação no início da execução. Os arquivos CSV são lidos com **Pandas**, enquanto os arquivos JSON são carregados como estruturas Python.
+Os dados da Base de Conhecimento são populados na pasta `data/` pela execução do arquvio `ingest_data.py`: assim, fica disponíveis para a aplicação no início da execução. Os arquivos CSV são lidos com **Pandas**, enquanto os arquivos JSON são carregados como estruturas Python.
 
 A aplicação mantém os dados carregados em memória durante a sessão, evitando a leitura dos arquivos a cada interação do usuário. No caso da interface desenvolvida com Streamlit, o carregamento pode ser realizado com mecanismos de cache da própria plataforma, reduzindo operações desnecessárias de I/O durante as interações.
 
