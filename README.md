@@ -20,12 +20,12 @@ O setor financeiro exige precisão. O objetivo deste projeto foi transcender o a
 
 O desenvolvimento seguiu uma esteira lógica de documentação e prototipagem. A situação atual do projeto é:
 
-- [x] **`docs/01-documentacao-agente.md`**: Definição da persona (Moprefipe), escopo de atuação e arquitetura do agente.
-- [x] **`docs/02-base-conhecimento.md`**: Mapeamento dos dados estruturados e contexto de negócios (perfil de investidor, portfólio, histórico).
-- [x] **`docs/03-prompts.md`**: Construção do *System Prompt* utilizando técnicas de *Few-Shot Prompting* e injeção de contexto para controle estrito de qualidade.
+- [x] **`docs/10-documentacao-agente.md`**: Definição da persona (Moprefipe), escopo de atuação e arquitetura do agente.
+- [x] **`docs/20-base-conhecimento.md`**: Mapeamento dos dados estruturados e contexto de negócios (perfil de investidor, portfólio, histórico).
+- [x] **`docs/30-prompts.md`**: Construção do *System Prompt* utilizando técnicas de *Few-Shot Prompting* e injeção de contexto para controle estrito de qualidade.
 - [x] **`app.py`**: Prototipagem da aplicação funcional, integrando a lógica de LLM com a base de conhecimento.
-- [X] **`docs/04-metricas.md`**: (Pendente) Definição de SLOs (Service Level Objectives) para precisão, tempo de resposta e taxa de alucinação.
-- [X] **`docs/05-pitch.md`**: (Pendente) Roteiro da apresentação executiva do projeto.
+- [X] **`docs/40-metricas.md`**: (Pendente) Definição de SLOs (Service Level Objectives) para precisão, tempo de resposta e taxa de alucinação.
+- [X] **`docs/50-pitch.md`**: (Pendente) Roteiro da apresentação executiva do projeto.
 
 ---
 
@@ -67,10 +67,15 @@ pip install -r requirements.txt
    * Vale notar que o arquivo `.gitignore` já contém uma declaração que ignora o arquivo `.env`.
    * Crie um arquivo `.env` (na raiz do repositório) e defina as variáveis de ambiente conforme o exemplo abaixo:
    ```bash 
-   GEMINI_API_KEY=digite_a_sua_api_key_da_conta_do_google_gemini_aqui_mesmo
+   GEMINI_API_KEY=registre_a_sua_api_key_da_conta_do_google_gemini_como_variavel_de_ambiente
    ```
 
-5. Execute a aplicação:
+5. Faça os downloads da base de conhecimento:
+```bash
+python ingest_data.py
+```
+
+6. Execute a aplicação:
 ```bash
 streamlit run app.py 
 
