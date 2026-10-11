@@ -1,5 +1,6 @@
 # Instalação dos datasets e pandas para manipulação de dados do Hugging Face Hub
-pip install datasets pandas
+pip install datasets
+pip install pandas
 
 # SDK da Inteligência Artificial Generativa
 google-genai>=0.1.0
