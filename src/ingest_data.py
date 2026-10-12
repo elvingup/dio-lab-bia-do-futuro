@@ -15,9 +15,10 @@ def ingerir_transacoes():
 
     e gera o data/transacoes.csv.
     """
-    print("🛒 [1/4] Baixando dataset de transações do Hugging Face...")
+    print("[1/4] Baixando dataset de transações do Hugging Face...")
     try:
         # Carregando dataset de categorização de transações financeiras
+        # obs.: precisa de autenticação no Hugging Face para obter esse dataset 
         dataset = load_dataset(
             "mitulshah/transaction-categorization", split="train"
         )
@@ -27,13 +28,13 @@ def ingerir_transacoes():
         # Selecionando e renomeando colunas para alinhar com o Moprefipe
         df_amostra = df.head(500).copy()
 
-        # Mapeamento para o padrão esperado pela Bia do Futuro
+        # Mapeamento para o padrão esperado pelo Moprefipe
         df_amostra.to_csv("data/transacoes.csv", index=False)
-        print("  ✅ 'data/transacoes.csv' gerado com sucesso!")
+        print("'data/transacoes.csv' gerado com sucesso!")
 
     except Exception as e:
         print(
-            f"  ⚠️ Erro ao carregar transações do Hugging Face: {e}",
+            f"Erro ao carregar transações do Hugging Face: {e}",
             file=sys.stderr,
         )
 
@@ -43,7 +44,7 @@ def ingerir_historico_atendimento():
 
     e gera o data/historico_atendimento.csv.
     """
-    print("💬 [2/4] Baixando histórico de atendimento do Hugging Face...")
+    print("[2/4] Baixando histórico de atendimento do Hugging Face...")
     try:
         # Usando corpus de conversas bancárias para simular tickets anteriores
         dataset = load_dataset("talkmap/banking-conversation-corpus", split="train")
@@ -65,18 +66,18 @@ def ingerir_historico_atendimento():
 
         df_atendimento = pd.DataFrame(atendimentos)
         df_atendimento.to_csv("data/historico_atendimento.csv", index=False)
-        print("  ✅ 'data/historico_atendimento.csv' gerado com sucesso!")
+        print("'data/historico_atendimento.csv' gerado com sucesso!")
 
     except Exception as e:
         print(
-            f"  ⚠️ Erro ao carregar atendimentos do Hugging Face: {e}",
+            f"Erro ao carregar atendimentos do Hugging Face: {e}",
             file=sys.stderr,
         )
 
 
 def gerar_perfil_investidor():
     """Gera o arquivo JSON com as metas e tolerância de risco do cliente (data/perfil_investidor.json)."""
-    print("📊 [3/4] Gerando perfil de investidor estruturado...")
+    print("[3/4] Gerando perfil de investidor estruturado...")
 
     perfil = {
         "usuario_id": "USR-88492",
@@ -107,12 +108,12 @@ def gerar_perfil_investidor():
     with open("data/perfil_investidor.json", "w", encoding="utf-8") as f:
         json.dump(perfil, f, ensure_ascii=False, indent=4)
 
-    print("  ✅ 'data/perfil_investidor.json' gerado com sucesso!")
+    print("'data/perfil_investidor.json' gerado com sucesso!")
 
 
 def gerar_produtos_financeiros():
     """Gera o catálogo de produtos e serviços disponíveis no Moprefipe (data/produtos_financeiros.json)."""
-    print("📋 [4/4] Gerando catálogo oficial de produtos financeiros...")
+    print("[4/4] Gerando catálogo oficial de produtos financeiros...")
 
     produtos = [
         {
@@ -161,12 +162,12 @@ def gerar_produtos_financeiros():
     with open("data/produtos_financeiros.json", "w", encoding="utf-8") as f:
         json.dump(produtos, f, ensure_ascii=False, indent=4)
 
-    print("  ✅ 'data/produtos_financeiros.json' gerado com sucesso!")
+    print("'data/produtos_financeiros.json' gerado com sucesso!")
 
 
 def main():
     print("=" * 60)
-    print("🚀 INICIANDO INGESTÃO DE DADOS - MOPREFIPE & BIA DO FUTURO")
+    print("INICIANDO INGESTÃO DE DADOS - MOPREFIPE")
     print("=" * 60)
 
     garantir_diretorio_data()
@@ -176,7 +177,7 @@ def main():
     gerar_produtos_financeiros()
 
     print("=" * 60)
-    print("🎉 INGESTÃO CONCLUÍDA! Todos os arquivos em 'data/' estão prontos.")
+    print("INGESTÃO CONCLUÍDA! Todos os arquivos em 'data/' estão prontos.")
     print("=" * 60)
 
 
