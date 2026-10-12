@@ -1,6 +1,8 @@
-# Instalação dos datasets e pandas para manipulação de dados do Hugging Face Hub
-pip install datasets
-pip install pandas
+# Para orquestrar a instalação é preciso ativar o ambiente virtual no terminal
+# e executar: pip install -r requirements.txt
+
+# Manipulação de Datasets do Hugging Face Hub
+datasets>=2.18.0
 
 # SDK da Inteligência Artificial Generativa
 google-genai>=0.1.0
@@ -13,5 +15,3 @@ pandas==2.2.1
 
 # Segurança e Gerenciamento de Segredos
 python-dotenv==1.0.1
-
-# Para orquestrar a instalação é preciso ativar o ambiente virtual no terminal e executar: pip install -r requirements.txt
