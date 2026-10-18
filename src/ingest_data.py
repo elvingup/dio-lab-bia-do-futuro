@@ -20,7 +20,7 @@ def ingerir_transacoes():
         # Carregando dataset de categorização de transações financeiras
         # obs.: precisa de autenticação no Hugging Face para obter esse dataset 
         dataset = load_dataset(
-            "mitulshah/transaction-categorization", split="train"
+            "mitulshah/transaction-categorization", split="train", token=os.getenv("HUGGINGFACE_TOKEN")
         )
 
         df = pd.DataFrame(dataset)
