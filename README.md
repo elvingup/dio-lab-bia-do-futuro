@@ -63,11 +63,12 @@ pip install -r requirements.txt
 ```
 
 
-4. Configure suas variáveis de ambiente (ex: API Keys) no arquivo `.env`.
+4. Configure suas variáveis de ambiente (ex.: API keys e tokens) no arquivo `.env`.
    * Vale notar que o arquivo `.gitignore` já contém uma declaração que ignora o arquivo `.env`.
    * Crie um arquivo `.env` (na raiz do repositório) e defina as variáveis de ambiente conforme o exemplo abaixo:
    ```bash 
-   GEMINI_API_KEY=registre_a_sua_api_key_da_conta_do_google_gemini_como_variavel_de_ambiente
+   GEMINI_API_KEY=registre_a_sua_API_key_da_conta_do_Google_Gemini_como_variavel_de_ambiente
+   HUGGINGFACE_TOKEN=registre_o_seu_Token_da_conta_do_Hugging_Face_como_variavel_de_ambiente
    ```
 
 5. Faça os downloads da base de conhecimento:
