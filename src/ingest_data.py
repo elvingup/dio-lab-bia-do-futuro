@@ -47,7 +47,7 @@ def ingerir_historico_atendimento():
     print("[2/4] Baixando histórico de atendimento do Hugging Face...")
     try:
         # Usando corpus de conversas bancárias para simular tickets anteriores
-        dataset = load_dataset("talkmap/banking-conversation-corpus", split="train")
+        dataset = load_dataset("talkmap/banking-conversation-corpus", split="train", token=os.getenv("HUGGINGFACE_TOKEN"))
 
         atendimentos = []
         for i, row in enumerate(dataset):
