@@ -24,8 +24,8 @@ O desenvolvimento seguiu uma esteira lógica de documentação e prototipagem. A
 - [x] **`docs/20-base-conhecimento.md`**: Mapeamento dos dados estruturados e contexto de negócios (perfil de investidor, portfólio, histórico).
 - [x] **`docs/30-prompts.md`**: Construção do *System Prompt* utilizando técnicas de *Few-Shot Prompting* e injeção de contexto para controle estrito de qualidade.
 - [x] **`app.py`**: Prototipagem da aplicação funcional, integrando a lógica de LLM com a base de conhecimento.
-- [X] **`docs/40-metricas.md`**: (Pendente) Definição de SLOs (Service Level Objectives) para precisão, tempo de resposta e taxa de alucinação.
-- [X] **`docs/50-pitch.md`**: (Pendente) Roteiro da apresentação executiva do projeto.
+- [X] **`docs/40-metricas.md`**: Definição de SLOs (Service Level Objectives) para precisão, tempo de resposta e taxa de alucinação.
+- [X] **`docs/50-pitch.md`**: Roteiro da apresentação executiva do projeto.
 
 ---
 
@@ -35,6 +35,9 @@ O núcleo de inteligência do **Moprefipe** baseia-se em princípios fortes de E
 1. **Contexto Fechado**: O agente opera estritamente sobre a base de conhecimento fornecida, garantindo segurança na recomendação de produtos financeiros.
 2. **Prevenção de Alucinação**: Instruções explícitas no *System Prompt* obrigam o agente a declarar desconhecimento caso a pergunta fuja da sua base de dados, em vez de inventar dados mercadológicos.
 3. **Tom de Voz**: Profissional, analítico e encorajador.
+
+### Observação referente ao uso dos datasets
+Há datasets da plataforma Hugging Face que são criados no projeto, quais sejam: `mitulshah/transaction-categorization` e `talkmap/banking-conversation-corpus`. Por isso, é necessário ter uma conta no Hugging Face. O acesso aos datasets é possível ao autenticar-se utilizando um _access token_ gerado pelo próprio usuário da plataforma .Também, vale notar que o dataset `mitulshah/transaction-categorization` é um gated dataset que exige que o usuário aceite os termos de acesso na webpage [mitulshah/transaction-categorization](https://huggingface.co/datasets/mitulshah/transaction-categorization).
 
 ## 🚀 Como Executar o Protótipo
 
@@ -81,8 +84,6 @@ python ingest_data.py
 streamlit run app.py 
 
 ```
-
-
 
 ---
 
