@@ -58,8 +58,9 @@ def carregar_base_conhecimento(data_dir: Path) -> str:
         except FileNotFoundError:
             return default
 
-    v_cliente = ler_arquivo("cliente.json", "Dados do cliente não encontrados.")
-    v_produtos = ler_arquivo("produtos.json", "Produtos não encontrados.")
+    # Ajuste dos nomes dos arquivos para alinhar com o ingest_data.py
+    v_cliente = ler_arquivo("perfil_investidor.json", "Dados do cliente não encontrados.")
+    v_produtos = ler_arquivo("produtos_financeiros.json", "Produtos não encontrados.")
 
     # Processamento seguro do histórico de atendimento em CSV via Pandas
     historico_atendimento_path = data_dir / "historico_atendimento.csv"
