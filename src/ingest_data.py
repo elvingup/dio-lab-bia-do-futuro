@@ -3,7 +3,10 @@ import os
 import sys
 import pandas as pd
 from datasets import load_dataset
+from dotenv import load_dotenv  
 
+# Carregar as variáveis de ambiente do arquivo .env
+load_dotenv()
 
 def garantir_diretorio_data():
     """Garante que a pasta data/ existe no projeto."""
@@ -33,10 +36,25 @@ def ingerir_transacoes():
         print("'data/transacoes.csv' gerado com sucesso!")
 
     except Exception as e:
-        print(
-            f"Erro ao carregar transações do Hugging Face: {e}",
-            file=sys.stderr,
-        )
+        print(f"Aviso: Não foi possível carregar do Hugging Face ({e}). Gerando base local de contingência...", file=sys.stderr)
+    
+        # Dados sintéticos de apoio para manter o projeto rodando
+        transacoes_sinteticas = [
+            {"data": "2026-10-01", "descricao": "Supermercado XYZ", "categoria": "Alimentação", "valor": 350.00, "tipo": "Débito"},
+            {"data": "2026-10-02", "descricao": "Serviço de Streaming", "categoria": "Entretenimento", "valor": 55.00, "tipo": "Débito"},
+            {"data": "2026-10-03", "descricao": "Pagamento Fatura Cartão", "categoria": "Contas Fixas", "valor": 1200.00, "tipo": "Débito"},
+            {"data": "2026-10-05", "descricao": "Posto de Combustível", "categoria": "Transporte", "valor": 180.00, "tipo": "Débito"},
+            {"data": "2026-10-07", "descricao": "Restaurante Almoço", "categoria": "Alimentação", "valor": 85.50, "tipo": "Débito"},
+            {"data": "2026-10-10", "descricao": "Salário Mensal", "categoria": "Renda", "valor": 5500.00, "tipo": "Crédito"},
+            {"data": "2026-10-12", "descricao": "Supermercado Mensal", "categoria": "Alimentação", "valor": 620.00, "tipo": "Débito"},
+            {"data": "2026-10-15", "descricao": "Aplicativo de Delivery", "categoria": "Alimentação", "valor": 92.40, "tipo": "Débito"},
+            {"data": "2026-10-18", "descricao": "Conta de Internet", "categoria": "Contas Fixas", "valor": 110.00, "tipo": "Débito"},
+            {"data": "2026-10-20", "descricao": "Farmácia Saúde", "categoria": "Saúde", "valor": 75.20, "tipo": "Débito"},
+            {"data": "2026-10-22", "descricao": "Padaria Local", "categoria": "Alimentação", "valor": 28.50, "tipo": "Débito"}
+        ]
+        df_fallback = pd.DataFrame(transacoes_sinteticas)
+        df_fallback.to_csv("data/transacoes.csv", index=False)
+        print("'data/transacoes.csv' gerado via fallback com sucesso!")
 
 
 def ingerir_historico_atendimento():
